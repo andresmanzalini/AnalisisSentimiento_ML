@@ -58,7 +58,7 @@ Maquinas de Soporte de Vectores SVM
 
         
  			
-                        precision media |  grid search	  |   seg     | validacion cruzada  
+         precision media |  grid search	  |   seg     | validacion cruzada  
 
 SGDClassifier ->      		0.85  	| 	0.835     |   214s    |  0.84 +- 0.03
 
@@ -66,10 +66,7 @@ SVMClasifier -> 	    	0.845	|	0.82	  |   421s    |  0.83 +- 0.02
 
 
 
-
-Naive Bayes
-
-                  	precision media |  grid search	|   seg   | validacion cruzada  
+*Naive Bayes*
 
 Binomial -> 		        0.8375	|   	0.77	    |   214s  |  0.79 +- 0.03
 
