@@ -53,12 +53,11 @@ De esta manera es posible aplicarlo a casos de uso reales, analizando el sentimi
 
 ## Resultados
 
-
-Maquinas de Soporte de Vectores SVM
-
-        
+      
  			
-         precision media |  grid search	  |   seg     | validacion cruzada  
+         precision media |  grid search	  |  seg   | validacion cruzada  
+
+*Maquinas de Soporte de Vectores SVM*
 
 SGDClassifier ->      		0.85  	| 	0.835     |   214s    |  0.84 +- 0.03
 
