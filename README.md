@@ -55,11 +55,11 @@ De esta manera es posible aplicarlo a casos de uso reales, analizando el sentimi
 
       
  			
-         precision media |  grid search	  |  seg   | validacion cruzada  
+     clasificador  ->   precision media |  grid search  |  seg   | validacion cruzada  
 
 *Maquinas de Soporte de Vectores SVM*
 
-SGDClassifier ->      		0.85  	| 	0.835     |   214s    |  0.84 +- 0.03
+SGDClassifier ->      		0.85  	|	0.835     |   214s    |  0.84 +- 0.03
 
 SVMClasifier -> 	    	0.845	|	0.82	  |   421s    |  0.83 +- 0.02
 
@@ -69,10 +69,10 @@ SVMClasifier -> 	    	0.845	|	0.82	  |   421s    |  0.83 +- 0.02
 
 Binomial -> 		        0.8375	|   	0.77	    |   214s  |  0.79 +- 0.03
 
-Multinomial -> 		        0.809 	| 	  0.801	    |   212s  |  0.82 +- 0.06
+Multinomial -> 		        0.809 	| 	0.801	    |   212s  |  0.82 +- 0.06
 
 
-RandomForest ->         	0.8525  |     0.825     |   1346s |  0.82 +- 0.02
+RandomForest ->         	0.8525  |     0.825	    |   1346s |  0.82 +- 0.02
 
 
 
