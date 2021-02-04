@@ -4,10 +4,10 @@
 ### Analisis de sentimiento a partir de reseñas de peliculas.
  
 Utilizando reseñas de peliculas, aplica un analisis subjetivo del sentimiento generado por determinada pelicula, en forma de critica. 
-La critica puede ser etiquetada como positiva o negativa, y representa el sentimiento generado por la pelicula.
-Ese sentimiento/sensacion, representado en una lista de strings, se tokeniza en palabras y se vectoriza, para homogeneizar la representacion computacional de ese sentimiento.
+La critica puede ser etiquetada como positiva o negativa, y representa en palabras el sentimiento generado por la pelicula.
+Ese sentimiento/sensacion, representado en una lista de strings, se tokeniza en oraciones y en palabras, y se vectoriza. De esta manera se normaliza la representacion computacional de ese sentimiento.
 
-Luego se entrenan distintos modelos de machine learning, capaces de predecir la polaridad del sentimiento dentro de las sentencias de palabras.
+Luego se entrenan distintos modelos de machine learning, capaces de predecir la polaridad del sentimiento implicito en los conjuntos de sentencias y de palabras.
 
 
 
@@ -21,19 +21,28 @@ Se crea un preprocesador, que limpia la data de caracteres raros o nulos, stop w
 Asi reduce la cantidad de palabras que representan el sentimiento hacia esa pelicula. 
 Al aplicar el preprocesamiento, quedan las palabras mas represetantivas de la reseña.
 
+(ej resena original)
+(ej resena preprocesada)
 
 Una vez definido el preprocesador, se hace el procesamiento de la informacion.
 
 Para esto se crea un Pipe, con los siguientes parametros:
 	
-	. Vectorizador, para tokenizar las palabras y limpiarlas con el preprocesador personalizado. Asi reducimos la dimensionalidad. 
+	Vectorizador, para tokenizar las palabras y limpiarlas con el preprocesador personalizado. Asi reducimos la dimensionalidad. 
 
-	. Transformador TfidfTransformer(),  para transformar los tokens a una estructura en forma de diccionario, con la palabra y su frecuencia de aparicion.
+	Transformador TfidfTransformer(),  para transformar los tokens a una estructura en forma de diccionario, con la palabra y su frecuencia de aparicion.
 
-	. Clasificador con los parametros adecuados
+	Clasificador, con los parametros adecuados para predecir.
 	
 
 El clasificador, ahora con forma de Pipe, recibe como entrada un conjunto de datos X_train de entrenamiento, de la forma lista de strings. Cada fila es una reseña de la pelicula, en formato string; y tambien recibe Y_train, con el tipo de sentimiento asociado a la reseña: positivo o negativo
+
+(ej texto preprocesado tokenizado)
+(ej texto transformado con TfidTransformer)
+
+
+
+Los hiperparametros asociados a la funcionalidad del clasificador se definen en 'params'
 
 
 Ejecuta el entrenamiento, con clasificador.fit(x_train, y_train, params)
@@ -46,8 +55,10 @@ Se hace una validacion cruzada para comparar resultados.
 
 
 
+
 A partir del analisis de sentimiento de reseñas de pelicuas, se extrapola al analisis de sentimiento a casos generales. Es decir, experiencias de viajes, compras, de alquileres, de ventas, etc.
 De esta manera es posible aplicarlo a casos de uso reales, analizando el sentimiento de opiniones de distinto tipo.
+
 
 
 
@@ -76,10 +87,11 @@ RandomForest ->         	0.8525  |     0.825	    |   1346s |  0.82 +- 0.02
 
 
 
+(ej matriz de confusion)
+
+
 
 ### Fuente
 
 https://arxiv.org/abs/cs/0409058
-
-
 
